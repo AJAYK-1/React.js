@@ -16,30 +16,44 @@ import Parent from './Components/useCallBackHook/Parent'
 import WithoutuseCallback from './Components/useCallBackHook/withoutuseCallback'
 import Parent1 from './Components/DataFlow/Parent1'
 import Counter from './Components/useCustomHook/Counter'
+import ThemeContext from './Context/ThemeContext'
+import { useState } from 'react'
+import ThemeChange from './Components/useContext/useContextSample'
 
 
 function App() {
 
+  const [theme, setTheme] = useState('light')
+
+  const ToggleTheme = () => {
+    setTheme(theme == 'light' ? 'dark' : 'light')
+  }
+
   return (
     <>
+        <ThemeContext.Provider value={{ theme, ToggleTheme }}>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/hello-world' element={<HelloWorld />} />
-        <Route path='/variable-in-JS' element={<VariableInJS />} />
-        <Route path='/pass-props' element={<PassProps />} />
-        <Route path='/using-props' element={<UsingProps />} />
-        <Route path='/usestate-hook' element={<UseStateHook />} />
-        <Route path='/forms-in-react' element={<FormsInReact />} />
-        <Route path='/useEffect-hook' element={<UseEffectHook />} />
-        <Route path='/useRef-hook' element={<UseRefHook />} />
-        <Route path='/timer' element={<Timer />} />
-        <Route path='/without-memo' element={<WithoutMemo />} />
-        <Route path='/useMemo-hook' element={<UseMemoHook />} />
-        <Route path='/useCallback-hook' element={<Parent />} />
-        <Route path='/without-useCallback' element={<WithoutuseCallback />} />
-        <Route path='/child-to-parent' element={<Parent1 />} />
-        <Route path='/custom-hook-sample' element={<Counter />} />
+
+          <Route path='/' element={<Home />} />
+          <Route path='/hello-world' element={<HelloWorld />} />
+          <Route path='/variable-in-JS' element={<VariableInJS />} />
+          <Route path='/pass-props' element={<PassProps />} />
+          <Route path='/using-props' element={<UsingProps />} />
+          <Route path='/usestate-hook' element={<UseStateHook />} />
+          <Route path='/forms-in-react' element={<FormsInReact />} />
+          <Route path='/useEffect-hook' element={<UseEffectHook />} />
+          <Route path='/useRef-hook' element={<UseRefHook />} />
+          <Route path='/timer' element={<Timer />} />
+          <Route path='/without-memo' element={<WithoutMemo />} />
+          <Route path='/useMemo-hook' element={<UseMemoHook />} />
+          <Route path='/useCallback-hook' element={<Parent />} />
+          <Route path='/without-useCallback' element={<WithoutuseCallback />} />
+          <Route path='/child-to-parent' element={<Parent1 />} />
+          <Route path='/custom-hook-sample' element={<Counter />} />
+          <Route path='/toggle-theme' element={<ThemeChange />} />
+
       </Routes>
+        </ThemeContext.Provider>
     </>
   )
 }

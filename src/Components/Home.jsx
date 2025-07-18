@@ -34,6 +34,8 @@ function Home() {
                 <br />
                 <a href="/custom-hook-sample">Custom Hook Sample</a>
                 <br />
+                <a href="/toggle-theme"> useContext Sample </a>
+                <br />
             </div>
         </>
     )

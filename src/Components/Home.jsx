@@ -36,6 +36,8 @@ function Home() {
                 <br />
                 <a href="/toggle-theme"> useContext Sample </a>
                 <br />
+                <a href="/useReducer-hook"> useReducer Sample </a>
+                <br />
             </div>
         </>
     )

@@ -19,6 +19,7 @@ import Counter from './Components/useCustomHook/Counter'
 import ThemeContext from './Context/ThemeContext'
 import { useState } from 'react'
 import ThemeChange from './Components/useContext/useContextSample'
+import UseReducerSample from './Components/useReducerHook/useReducerSample'
 
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
           <Route path='/child-to-parent' element={<Parent1 />} />
           <Route path='/custom-hook-sample' element={<Counter />} />
           <Route path='/toggle-theme' element={<ThemeChange />} />
+          <Route path='/useReducer-hook' element={<UseReducerSample/>} />
 
       </Routes>
         </ThemeContext.Provider>

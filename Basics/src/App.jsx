@@ -32,8 +32,8 @@ function App() {
 
   return (
     <>
-        <ThemeContext.Provider value={{ theme, ToggleTheme }}>
-      <Routes>
+      <ThemeContext.Provider value={{ theme, ToggleTheme }}>
+        <Routes>
 
           <Route path='/' element={<Home />} />
           <Route path='/hello-world' element={<HelloWorld />} />
@@ -52,10 +52,10 @@ function App() {
           <Route path='/child-to-parent' element={<Parent1 />} />
           <Route path='/custom-hook-sample' element={<Counter />} />
           <Route path='/toggle-theme' element={<ThemeChange />} />
-          <Route path='/useReducer-hook' element={<UseReducerSample/>} />
+          <Route path='/useReducer-hook' element={<UseReducerSample />} />
 
-      </Routes>
-        </ThemeContext.Provider>
+        </Routes>
+      </ThemeContext.Provider>
     </>
   )
 }
